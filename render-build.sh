@@ -3,9 +3,9 @@ set -e
 
 echo "=== GeekFaka Render Build Script ==="
 
-# Install dependencies
+# Install dependencies (force install devDependencies too)
 echo "Installing dependencies..."
-yarn install
+yarn install --production=false
 
 # Transform Prisma schema from sqlite to postgresql
 echo "Transforming Prisma schema for PostgreSQL..."
