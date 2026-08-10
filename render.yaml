@@ -3,7 +3,7 @@ services:
     name: geekfaka
     runtime: node
     plan: free
-    region: singapore
+    region: oregon
     nodeVersion: "20"
     buildCommand: chmod +x render-build.sh && ./render-build.sh
     startCommand: chmod +x render-start.sh && ./render-start.sh
@@ -25,7 +25,6 @@ services:
         value: geekfaka_session
       - key: NODE_ENV
         value: production
-
 
 databases:
   - name: geekfaka-db
