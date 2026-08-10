@@ -15,10 +15,6 @@ sed -i 's/provider = "sqlite"/provider = "postgresql"/g' prisma/schema.prisma
 echo "Generating Prisma client..."
 npx prisma@5 generate
 
-# Push database schema to PostgreSQL
-echo "Pushing database schema..."
-npx prisma@5 db push --accept-data-loss
-
 # Build Next.js
 echo "Building Next.js..."
 yarn build
