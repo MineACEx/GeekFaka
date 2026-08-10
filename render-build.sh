@@ -5,13 +5,13 @@ echo "=== GeekFaka Render Build Script ==="
 
 # Install dependencies
 echo "Installing dependencies..."
-yarn install --frozen-lockfile
+yarn install
 
 # Transform Prisma schema from sqlite to postgresql
 echo "Transforming Prisma schema for PostgreSQL..."
 sed -i 's/provider = "sqlite"/provider = "postgresql"/g' prisma/schema.prisma
 
-# Generate Prisma client (force Prisma 5 to avoid Prisma 7 schema incompatibility)
+# Generate Prisma client (force Prisma 5)
 echo "Generating Prisma client..."
 npx prisma@5 generate
 
