@@ -7,9 +7,9 @@ echo "=== GeekFaka Render Start Script ==="
 echo "Ensuring PostgreSQL schema..."
 sed -i 's/provider = "sqlite"/provider = "postgresql"/g' prisma/schema.prisma
 
-# Push database schema
+# Push database schema (force Prisma 5)
 echo "Pushing database schema..."
-npx prisma db push --accept-data-loss --skip-generate
+npx prisma@5 db push --accept-data-loss --skip-generate
 
 # Start the Next.js server
 echo "Starting server..."
