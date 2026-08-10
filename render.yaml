@@ -3,7 +3,6 @@ services:
     name: geekfaka
     runtime: node
     plan: free
-    region: oregon
     buildCommand: chmod +x render-build.sh && ./render-build.sh
     startCommand: chmod +x render-start.sh && ./render-start.sh
     healthCheckPath: /
