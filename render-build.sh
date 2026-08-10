@@ -11,9 +11,9 @@ yarn install --frozen-lockfile
 echo "Transforming Prisma schema for PostgreSQL..."
 sed -i 's/provider = "sqlite"/provider = "postgresql"/g' prisma/schema.prisma
 
-# Generate Prisma client
+# Generate Prisma client (force Prisma 5 to avoid Prisma 7 schema incompatibility)
 echo "Generating Prisma client..."
-npx prisma generate
+npx prisma@5 generate
 
 # Build Next.js
 echo "Building Next.js..."
